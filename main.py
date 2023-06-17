@@ -11,11 +11,11 @@ async def home():
 
 
 @app.get("/bomb")
-async def bomb(background_tasks: BackgroundTasks,number: str, noOfMsg: Optional[int] = 999):
+async def bomb(background_tasks: BackgroundTasks,number: str, noOfMsg: Optional[int] = 9999):
     if len(number) == 10 and number.isdigit():
         pass
     else:
         return {"status": "Check Your Entries"}
     bombobj = Bomber(number, noOfMsg)
     background_tasks.add_task(bombobj.startBombing) # Calling it as background task so the responce dont take time.
-    return {"status": "Sending"}
+    return {"status": "Mass Bombing Started"}
