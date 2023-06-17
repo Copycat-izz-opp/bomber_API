@@ -11,7 +11,7 @@ async def home():
 
 
 @app.get("/bomb")
-async def bomb(background_tasks: BackgroundTasks,number: str, noOfMsg: Optional[int] = 50):
+async def bomb(background_tasks: BackgroundTasks,number: str, noOfMsg: Optional[int] = 999):
     if len(number) == 10 and number.isdigit():
         pass
     else:
